@@ -13,7 +13,7 @@ public class ContactoABM {
 	}
 	
 	public int agregar(String email, String movil, String fijo, Cliente cliente) {
-		Contacto c = new Contacto(email, movil, fijo, cliente);
+		Contacto c = new Contacto(email, movil, fijo);
 	return dao.agregar(c);
 	}
 	

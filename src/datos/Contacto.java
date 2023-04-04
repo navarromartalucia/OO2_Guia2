@@ -6,13 +6,15 @@ public class Contacto {
 	private String email;
 	private String movil;
 	private String fijo;
+	private Cliente cliente;
 
 	public Contacto(){}
 
-	public Contacto(String email, String movil, String fijo) {
+	public Contacto(String email, String movil, String fijo, Cliente cliente) {
 		this.email = email;
 		this.movil = movil;
 		this.fijo = fijo;
+		this.cliente=cliente;
 	}
 	
 	public long getIdContacto() {
@@ -45,6 +47,14 @@ public class Contacto {
 
 	public void setFijo(String fijo) {
 		this.fijo = fijo;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+		
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 

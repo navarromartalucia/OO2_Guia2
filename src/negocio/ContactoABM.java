@@ -1,29 +1,31 @@
 package negocio;
 
+import dao.ClienteDao;
 import dao.ContactoDao;
 import datos.Cliente;
 import datos.Contacto;
 
 public class ContactoABM {
-	ContactoDao dao = new ContactoDao();
+	ContactoDao contactoDao = new ContactoDao();
+	//ClienteDao clienteDao = new ClienteDao();
 	
 	public Contacto traer(long idContacto) {
-		Contacto c = dao.traer(idContacto);
+		Contacto c = contactoDao.traer(idContacto);
 		return c;
 	}
 	
 	public int agregar(String email, String movil, String fijo, Cliente cliente) {
-		Contacto c = new Contacto(email, movil, fijo);
-	return dao.agregar(c);
+		Contacto c = new Contacto(email, movil, fijo, cliente);
+	return contactoDao.agregar(c);
 	}
 	
 	public void modificar(Contacto c) {
-		dao.actualizar(c);
+		contactoDao.actualizar(c);
 	}
 		
 	public void eliminar(long idContacto) {
-		Contacto c = dao.traer(idContacto);
-		dao.eliminar(c);
+		Contacto c = contactoDao.traer(idContacto);
+		contactoDao.eliminar(c);
 	}
 
 }
